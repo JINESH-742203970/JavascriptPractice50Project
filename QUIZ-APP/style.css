@@ -1,77 +1,92 @@
-
 *{
     margin:0;
     padding:0;
-    font-family:'Poppins',sans-serif;
     box-sizing:border-box;
 }
 body{
-    background:#001e4d;
-
+    background:#f5efe6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:1rem;
+    font-family:sans-serif;
 }
-.app{
-    background:#fff;
-    width:90%;
-    max-width:600px;
-    margin:10px auto;
-    border-radius:10px;
-    padding:30px;
-}
-.app h1{
-    font-weight:25px;
-    color:#001e4d;
-    font-weight:600;
-    border-bottom:1px solid #333;
-    padding-bottom:30px;
-}
-.quiz{
-    padding:20px;
-}
-.quiz h2{
-    font-size:18px;
-    color:#001e4d;
-    font-weight:600;
-}
-.btn{
-    background:#fff;
-    color:#222;
-    font-weight:500;
+.container{
+    background-color:white;
+    border-radius:1rem;
+    box-shadow:0 10px 30px rgba(0,0,0,0.7);
     width:100%;
-    border:1px solid #222;
-    padding:10px;
-    margin:10px 0;
-    text-align:left;
-    border-radius:4px;
-    cursor:pointer;
-    transition:all 0.3s;
-    /* This line is a CSS transition property, which makes the changes to certain styles animate smoothly over a duration of time, rather than changing instantly. */
-    /* all: Means all animatable CSS properties will be transitioned if they change (like background, color, padding, etc.)
-    0.3s: The duration of the transition — in this case, 0.3 seconds (or 300 milliseconds). */
+    max-width:600px;
 }
-.btn:hover:not([disabled]){
-    background:#222;
-    color:#fff; 
-}
-.btn:disabled{
-    cursor:no-drop;
-}
-#next-btn{
-    background:#001e4d;
-    color:#fff;
-    font-weight:500;
-    width:150px;
-    border:0;
-    padding:10px;
-    margin:20px auto 0;
-    border-radius:4px;
-    cursor:pointer;
+.screen{
     display:none;
+    padding:2rem;
+    text-align:center;
 }
-
-.correct{
-    background:#9aeabc;
+.screen.active{
+    display:block;
 }
-
-.incorrect{
-    background:#ff9393;
+#start-screen h1{
+    color:#e86a33;
+    margin-bottom:20px;
+    font-size:2.5rem;
+}
+.quiz-header{
+    margin-bottom:2rem;
+}
+#question-text{
+    color:#333;
+    font-size:1.5rem;
+    margin-bottom:1rem;
+    line-height:1.4;
+}
+.quiz-info{
+    display:flex;
+    justify-content:space-between;
+    color:#666;
+    margin-bottom:10px;
+}
+.answers-container{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:25px;
+}
+.answer-btn{
+    background-color:#f8f0e5;
+    color:#333;
+    border:2px solid #eadbc8;
+    border-radius:10px;
+    padding:1rem;
+    cursor:pointer;
+    text-align:left;
+    transition:all 0.3s ease;
+}
+.answer-btn:hover{
+    background-color:#eadbc8;
+    border-color:#dac0ae;
+}
+.answer-btn.correct{
+    background-color:#e6ff10;
+    border-color:#a3f0c4;
+    color:#20a745;
+}
+.answer-btn.incorrect{
+    background-color:#fff0f0;
+    border-color:#ffbdbd;
+    color:#dc3545;
+}
+.progress-bar{
+    height:10px;
+    background-color:#f8f0e5;
+    border-radius:5px;
+    overflow:hidden;
+    margin-top:20px;
+}
+.progress{
+    height:100%;
+    background-color:#e86a33;
+    width:0%;
+    transition:width 0.3s ease;
 }
